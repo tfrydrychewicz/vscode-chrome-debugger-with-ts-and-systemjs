@@ -1,0 +1,13 @@
+jspm_packages/
+typings/**/*.ts
+!typings/reference.d.ts
+!build/
+wwwroot/app/**/*.js
+wwwroot/app/demo/
+wwwroot/app/routes.json
+wwwroot/app/**/*.js.map
+wwwroot/styles/**/*.css
+wwwroot/release/
+wwwroot/dist/
+.tsdrc
+.vscode/
