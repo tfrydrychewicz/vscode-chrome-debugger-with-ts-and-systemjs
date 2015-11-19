@@ -8,6 +8,7 @@ var paths = require('../paths');
 var changed = require('gulp-changed');
 var sourcemaps = require('gulp-sourcemaps');
 var tsConfig = require('../../tsconfig.json');
+var path = require('path');
 
 gulp.task('build-sass', function () {
     gulp.src(paths.files.style)
@@ -17,13 +18,14 @@ gulp.task('build-sass', function () {
       .pipe(gulp.dest(paths.folder.style));
 });
 
+var sourceRoot = path.resolve(__dirname + '/../../wwwroot/app/');
 gulp.task('build-typescript', function () {
     return gulp.src(paths.files.typescript)
             .pipe(changed(paths.folder.output, {extension: '.js'}))            
             .pipe(filelog('compiling TypeScript'))                                 
             .pipe(sourcemaps.init())       
             .pipe(ts(tsConfig.compilerOptions))
-            .pipe(sourcemaps.write({sourceRoot: '/app'}))
+            .pipe(sourcemaps.write({sourceRoot: sourceRoot}))
             .pipe(gulp.dest(paths.folder.output));    
 });
 

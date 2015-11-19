@@ -7,7 +7,9 @@
 			"request": "launch",
 			"url": "http://localhost:9877/index.html",
 			"sourceMaps": true,
-			"outDir": "wwwroot/dist"
+			"outDir": "wwwroot/dist",
+			"cwd": "wwwroot",
+			"diagnosticLogging": true
 		},
 		{
 			"name": "Attach",
